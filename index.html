@@ -14,7 +14,7 @@
         <div class="todo-app">
             <h2>Your Personal To-Do List <img src="images/todo-list.png"></h2>
             <div class="row">
-                <input type="text" id="input-box" placeholder="Add task!!!">
+                <input type="text" id="add" placeholder="Add task!!!">
                 <button onclick="addTasks()">Add!</button>
             </div>
             <ul id="list-container">
@@ -23,13 +23,35 @@
         <div class="todo-app">
             <h2>Your Personal Playlist <img src="images/todo-list.png"></h2>
             <div class="row">
-                <input type="text" id="input-box" placeholder="Add song!!!">
+                <input type="text" id="add" placeholder="Add song!!!">
                 <button onclick="addTasks()">Add song</button>
             </div>
             <ul id="list-container">
             </ul>
         </div>
     </div>
+
+    <dialog id="add-dialog" onclick="event.target === this && this.close()">
+        <article>
+            <header>
+                <h2>Add task!!!</h2>
+                <button aria-label="Close" rel="prev" id="close"></button>
+            </header>
+
+            <label>Title</label>
+            <input type="text" id="input-box" autofocus>
+
+            <label>Details</label>
+            <input type="text" id="input-box">
+
+            <label>Deadlines</label>
+            <input type="date" id="input-box">
+
+            <footer>
+                <button type="submit" id="submit">Submit</button>
+            </footer>
+        </article>
+    </dialog>
 
 <script src="click.js"></script>
 </body>
